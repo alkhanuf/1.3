@@ -50,7 +50,14 @@ namespace lab13
                 }
             }
 
-            Console.WriteLine(string.Join(", ", res));
+            string[] finalres = new string[resi];
+
+            for (int i = 0; i < resi; i++)
+            {
+                finalres[i] = res[i];
+            }
+
+            Console.WriteLine(string.Join(", ", finalres));
         }
     }
 }
