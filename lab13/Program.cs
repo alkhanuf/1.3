@@ -16,8 +16,41 @@ namespace lab13
             string[] words1 = s1.Split(' ');
             string[] words2 = s2.Split(' ');
 
-            Console.WriteLine(string.Join(", ", words1));
-            Console.WriteLine(string.Join(", ", words2));
+            string[] res = new string[words1.Length];
+
+            int resi = 0;
+
+            //Console.WriteLine(string.Join(", ", words1));
+            //Console.WriteLine(string.Join(", ", words2));
+
+            for (int i = 0; i < words1.Length; i++)
+            {
+                for (int j = 0; j < words2.Length; j++)
+                {
+                    if (words1[i] == words2[j])
+                    {
+                        bool f = false;
+
+                        for (int k = 0; k < res.Length; k++)
+                        {
+                            if (res[k] == words1[i])
+                            {
+                                f = true; 
+                                break; 
+                            }
+                        }
+
+                        if (f == false)
+                        {
+                            res[resi] = words1[i];
+                            resi++;
+                        }
+                        
+                    }
+                }
+            }
+
+            Console.WriteLine(string.Join(", ", res));
         }
     }
 }
